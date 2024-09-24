@@ -1,0 +1,375 @@
+/* Main body styling */
+body {
+  font-family: "Press Start 2P", sans-serif;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  background-color: skyblue;
+}
+
+/* Dark mode styles */
+body.dark-mode {
+  background-color: #121212;
+  color: #ffffff;
+}
+
+/* modal dark mode */
+body.dark-mode .modal-content {
+  background-color: #000000;
+  color: #ffffff;
+}
+
+/* Dark mode styles for container */
+.container.dark-mode {
+  background-color: #1e1e1e;
+  color: #ffffff;
+}
+
+/* Dark mode styles for Pokemon list items */
+.dark-mode .pokemon-list li {
+  background-color: black;
+  color: white;
+  border: 1px solid #ffffff;
+}
+
+/* Dark mode for small Pokémon images */
+.dark-mode .small-pokemon-image {
+  border-color: orange;
+}
+
+/* Light & Dark mode toggle button */
+.toggle-container {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  z-index: 1000;
+  width: auto;
+  display: flex;
+  justify-content: center;
+  padding: 5px;
+}
+
+/* Light & Dark mode toggle button */
+.dark-mode-button {
+  padding: 17px;
+  background: linear-gradient(135deg, #ff8a65, #f44336);
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  position: relative;
+  transition: background 0.4s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Moon icon for light mode */
+.dark-mode-button::before {
+  content: "🌙";
+  font-size: 20px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 1;
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+/* Hover effect for the button */
+.dark-mode-button:hover {
+  background: linear-gradient(135deg, #f44336, #ff7043);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.4);
+  transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* When dark mode is activated, the moon icon fades out and the sun icon fades in */
+body.dark-mode .dark-mode-button::before {
+  content: "☀️";
+  opacity: 1;
+  font-size: 20px;
+  transform: translate(-50%, -50%) rotate(180deg);
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+/* This hides the previous icon smoothly when switching modes */
+body:not(.dark-mode) .dark-mode-button::before {
+  opacity: 1;
+  transform: translate(-50%, -50%) rotate(0deg);
+}
+
+body.dark-mode .dark-mode-button::before {
+  opacity: 1;
+  transform: translate(-50%, -50%) rotate(180deg);
+}
+
+/* Smooth transition for background color and text color on body when you click dark or light mode */
+body {
+  transition: background-color 0.5s ease, color 0.5s ease;
+}
+
+/* Styling for the container */
+.container {
+  width: 100%;
+  max-width: 1200px;
+  min-height: 100vh;
+  margin: 0 auto;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+/* h1 page header*/
+h1 {
+  margin-top: 20px;
+  margin-bottom: 30px;
+  font-size: 2.5rem;
+}
+
+/* Pokemon list container */
+.pokemon-list-container {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  padding: 0;
+  margin: 0 auto;
+}
+
+/* Pokemon list grid layout */
+.pokemon-list {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  width: 100%;
+  max-width: 1200px;
+  padding: 0;
+  margin: 0 auto;
+}
+
+/* Styling for individual Pokemon list items */
+.pokemon-list li {
+  background-color: white;
+  padding: 20px;
+  border: 2px solid #333;
+  border-radius: 12px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  width: 100%;
+  max-width: 250px;
+  min-height: 400px;
+  height: auto;
+  transition: transform 0.3s ease-in-out;
+  overflow: hidden;
+}
+
+/* Adjusting Pokemon names inside the cards */
+.pokemon-list li h2 {
+  font-size: 1.2rem;
+  text-align: center;
+  word-wrap: break-word;
+  margin-bottom: 10px;
+}
+
+/* Image for Pokemon cards */
+.pokemon-list li img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+/* Hover effect for Pokémon cards */
+.pokemon-list li:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.4);
+}
+
+/* Tooltip for additional Pokemon info */
+.tooltip {
+  visibility: hidden;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  padding: 5px;
+  border-radius: 6px;
+  position: absolute;
+  bottom: 125%;
+  left: 50%;
+  transform: translateX(-50%);
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+/* Show tooltip on hover */
+.pokemon-list li:hover .tooltip {
+  visibility: visible;
+  opacity: 1;
+}
+
+/* Modal for Pokemon details */
+.pokemon-modal-image {
+  width: 100%;
+  max-width: 300px;
+  height: auto;
+  object-fit: cover;
+  display: block;
+  margin: 0 auto 20px;
+}
+
+/* Stat bars container */
+.stat-bar {
+  background-color: #ddd;
+  border-radius: 8px;
+  margin: 5px 0;
+  width: 100%;
+  height: 15px;
+  position: relative;
+}
+
+/* Inner stat fill bar */
+.bar {
+  height: 100%;
+  border-radius: 8px;
+  background-color: orange;
+  max-width: 100%;
+  text-align: center;
+  font-size: 12px;
+  padding: 0 5px;
+  line-height: 15px;
+  color: white;
+  white-space: nowrap;
+}
+
+/* Pokemon Type Bars */
+.type-bars {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+/* Individual Type Bar */
+.type-bar {
+  display: inline-block;
+  padding: 5px 10px;
+  border-radius: 8px;
+  margin: 5px;
+  min-width: 70px;
+  text-align: center;
+  flex-shrink: 0;
+  font-size: 14px;
+}
+
+/* Type label */
+.type-label {
+  color: #fff;
+  font-weight: bold;
+  text-transform: capitalize;
+  display: block;
+}
+
+/* Search bar container */
+.search-bar-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+/* Search bar styling */
+.search-bar {
+  width: 100%;
+  max-width: 400px;
+  padding: 15px;
+  font-size: 18px;
+  border-radius: 8px;
+  border: 2px solid #333;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  outline: none;
+  transition: all 0.3s ease;
+  font-family: "Press Start 2P", sans-serif;
+  text-align: left;
+}
+
+/* Search bar effect */
+.search-bar:focus {
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Styling for Pokemon types */
+.type-dropdown {
+  width: 100%;
+  max-width: 400px;
+  padding: 10px;
+  font-size: 16px;
+  margin-left: 10px;
+  border-radius: 5px;
+  border: 2px solid #333;
+  background-color: white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  font-family: "Press Start 2P", sans-serif;
+}
+
+/* Dropdown focus effect */
+.type-dropdown:focus {
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Media queries for responsiveness */
+
+/* For screens smaller than 1024px */
+@media (max-width: 1024px) {
+  .pokemon-list {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+
+  .dark-mode-button {
+    padding: 12px;
+  }
+}
+
+/* For screens smaller than 768px */
+@media (max-width: 768px) {
+  .pokemon-list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  h1 {
+    font-size: 1.8rem;
+  }
+
+  .pokemon-list li {
+    max-width: 200px;
+    min-height: 350px;
+  }
+
+  .dark-mode-button {
+    padding: 10px;
+  }
+}
+
+/* For screens smaller than 480px */
+@media (max-width: 480px) {
+  .pokemon-list {
+    grid-template-columns: 1fr;
+  }
+
+  h1 {
+    font-size: 1.5rem;
+  }
+
+  .pokemon-list li {
+    max-width: 100%;
+    min-height: auto;
+  }
+
+  .dark-mode-button {
+    padding: 8px;
+  }
+}
