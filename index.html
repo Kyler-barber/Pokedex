@@ -7,27 +7,24 @@
 
     <!-- Bootstrap CSS for styling and layout -->
     <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css"
-      integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
-      crossorigin="anonymous"
-    />
+    rel="stylesheet"
+    href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+    integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+    crossorigin="anonymous"
+  />
 
     <!-- Custom CSS for additional styling -->
     <link rel="stylesheet" href="css/styles.css" />
 
-    <!-- Google Font for pixel-style Pokémon theme -->
+    <!-- Google Font for pixel-style Pokemon theme -->
     <link
       href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap"
       rel="stylesheet"
     />
 
     <!-- Pokémon-style font for title -->
-    <link
-      href="https://fontlibrary.org/face/pokemon-solid"
-      rel="stylesheet"
-      type="text/css"
-    />
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+
   </head>
 
   <body>
@@ -74,10 +71,10 @@
           class="search-bar"
           placeholder="Search Pokemon"
         />
-        <!-- Dropdown for Pokémon types, dynamically populated -->
+        <!-- Dropdown for Pokemon types, dynamically populated -->
         <select id="type-dropdown" class="type-dropdown">
           <option value="">All Types</option>
-          <!-- Pokémon types will be dynamically inserted here -->
+          <!-- Pokemon types will be dynamically inserted here -->
         </select>
       </div>
 
@@ -88,7 +85,7 @@
       </div>
     </div>
 
-    <!-- Modal to display Pokémon details -->
+    <!-- Modal to display Pokemon details -->
     <div
       class="modal fade"
       id="pokemonModal"
@@ -100,19 +97,12 @@
       <div class="modal-dialog" role="document">
         <div class="modal-content">
           <div class="modal-header">
-            <!-- Modal title for Pokémon details -->
+            <!-- Modal title for Pokemon details -->
             <h5 class="modal-title" id="pokemonModalLabel">Pokemon Details</h5>
-            <button
-              type="button"
-              class="close"
-              data-dismiss="modal"
-              aria-label="Close"
-            >
-              <span aria-hidden="true">&times;</span>
-            </button>
+            
           </div>
           <div class="modal-body">
-            <!-- Dynamic content (Pokémon stats and details) will be inserted here -->
+            <!-- Dynamic content (Pokemon stats and details) will be inserted here -->
           </div>
           <div class="modal-footer">
             <button
@@ -127,7 +117,7 @@
       </div>
     </div>
 
-    <!-- Loading spinner to show while Pokémon data is loading -->
+    <!-- Loading spinner to show while Pokemon data is loading -->
     <div id="loading-spinner" style="display: none">
       <img src="path/to/pokeball-spinner.gif" alt="Loading..." />
     </div>
