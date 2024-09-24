@@ -37,28 +37,26 @@ body.dark-mode .modal-content {
   border-color: orange;
 }
 
-/* Light & Dark mode toggle button */
 .toggle-container {
-  position: fixed;
-  top: 10px;
-  right: 10px;
+  position: absolute;
+  top: 90px;
+  right: 30px;
   z-index: 1000;
-  width: auto;
-  display: flex;
-  justify-content: center;
-  padding: 5px;
+  padding: 0;
 }
 
-/* Light & Dark mode toggle button */
 .dark-mode-button {
-  padding: 17px;
-  background: linear-gradient(135deg, #ff8a65, #f44336);
-  border: none;
-  border-radius: 50%;
+  background: none; 
+  border: none;     
+  box-shadow: none; 
+  padding: 0;       
   cursor: pointer;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-  position: relative;
-  transition: background 0.4s ease, transform 0.3s ease, box-shadow 0.3s ease;
+  font-size: 24px;  
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease; 
+  transform-origin: center; 
 }
 
 /* Moon icon for light mode */
@@ -75,11 +73,13 @@ body.dark-mode .modal-content {
 
 /* Hover effect for the button */
 .dark-mode-button:hover {
-  background: linear-gradient(135deg, #f44336, #ff7043);
-  transform: translateY(-3px);
-  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.4);
-  transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+  background: none; 
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); 
+  transition: box-shadow 0.3s ease; 
+  transform: scale(1.50); 
+  transition: transform 2s ease, box-shadow 0.3s ease; 
 }
+
 
 /* When dark mode is activated, the moon icon fades out and the sun icon fades in */
 body.dark-mode .dark-mode-button::before {
@@ -218,6 +218,17 @@ h1 {
   display: block;
   margin: 0 auto 20px;
 }
+
+/* Center the modal footer close button */
+.modal-footer {
+  display: flex;
+  justify-content: center; 
+}
+
+.modal-footer button {
+  margin: 0 auto;
+}
+
 
 /* Stat bars container */
 .stat-bar {
