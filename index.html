@@ -1,41 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <!-- Meta tag to define character set as UTF-8 -->
     <meta charset="utf-8" />
+
+    <!-- Meta tag to ensure proper scaling on mobile devices -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Page title displayed in the browser tab -->
     <title>Pokedex</title>
 
-    <!-- Bootstrap CSS for styling and layout -->
+    <!-- Bootstrap CSS for styling and responsive layout -->
     <link
-    rel="stylesheet"
-    href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
-    integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
-    crossorigin="anonymous"
-  />
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+      integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+      crossorigin="anonymous"
+    />
 
-    <!-- Custom CSS for additional styling -->
-    <link rel="stylesheet" href="css/styles.css" />
+    <!-- Link to custom styles for additional page styling -->
+    <link rel="stylesheet" href="dist/dist.css" />
 
-    <!-- Google Font for pixel-style Pokemon theme -->
+    <!-- Google font for Pokemon-styled text, specifically the Press Start 2P font -->
     <link
       href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap"
       rel="stylesheet"
     />
-
-    <!-- Pokémon-style font for title -->
-    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
-
   </head>
 
   <body>
-    <!-- Dark mode toggle button -->
+    <!-- Dark mode toggle button for switching between light and dark modes -->
     <div class="toggle-container">
-      <button id="dark-mode-toggle" class="dark-mode-button"></button>
+      <button
+        id="dark-mode-toggle"
+        class="dark-mode-button"
+        type="button"
+        title="Toggle Dark Mode"
+      ></button>
     </div>
 
-    <!-- Bootstrap Navbar for navigation -->
+    <!-- Bootstrap Navbar for site navigation -->
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <!-- Brand title for the Navbar -->
       <a class="navbar-brand" href="#">Pokedex</a>
+
+      <!-- Button for collapsing the menu on smaller screens -->
       <button
         class="navbar-toggler"
         type="button"
@@ -47,8 +56,11 @@
       >
         <span class="navbar-toggler-icon"></span>
       </button>
+
+      <!-- Collapsible menu containing navigation links -->
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav">
+          <!-- Active menu item -->
           <li class="nav-item active">
             <a class="nav-link" href="#"
               >Home <span class="sr-only">(current)</span></a
@@ -58,34 +70,40 @@
       </div>
     </nav>
 
-    <!-- Main content container -->
+    <!-- Main content container for the page -->
     <div class="container">
-      <!-- Page Title -->
+      <!-- Main heading of the page -->
       <h1>Pokedex</h1>
 
-      <!-- Search bar and dropdown for filtering Pokémon by type -->
+      <!-- Search bar container with input field and filter dropdown -->
       <div class="search-bar-container">
+        <!-- Input field for searching Pokemon by name -->
         <input
           type="text"
           id="pokemon-search"
           class="search-bar"
           placeholder="Search Pokemon"
         />
-        <!-- Dropdown for Pokemon types, dynamically populated -->
+
+        <!-- Label for the Pokemon type dropdown -->
+        <label for="type-dropdown">Pokemon type:</label>
+
+        <!-- Dropdown menu for filtering Pokemon by type -->
         <select id="type-dropdown" class="type-dropdown">
           <option value="">All Types</option>
           <!-- Pokemon types will be dynamically inserted here -->
         </select>
       </div>
 
-      <!-- Pokémon List, dynamically populated with Pokémon cards -->
+      <!-- Container for dynamically loading Pokemon list -->
       <div class="pokemon-list-container">
+        <!-- Unordered list to hold Pokemon list items -->
         <ul class="pokemon-list list-group"></ul>
-        <!-- List items (Pokémon) will be inserted here -->
+        <!-- Pokemon list items will be inserted dynamically here -->
       </div>
     </div>
 
-    <!-- Modal to display Pokemon details -->
+    <!-- Modal dialog for displaying detailed information about a selected Pokemon -->
     <div
       class="modal fade"
       id="pokemonModal"
@@ -99,12 +117,12 @@
           <div class="modal-header">
             <!-- Modal title for Pokemon details -->
             <h5 class="modal-title" id="pokemonModalLabel">Pokemon Details</h5>
-            
           </div>
           <div class="modal-body">
-            <!-- Dynamic content (Pokemon stats and details) will be inserted here -->
+            <!-- The detailed content of the selected Pokemon will be displayed here -->
           </div>
           <div class="modal-footer">
+            <!-- Button to close the modal dialog -->
             <button
               type="button"
               class="btn btn-secondary"
@@ -117,12 +135,12 @@
       </div>
     </div>
 
-    <!-- Loading spinner to show while Pokemon data is loading -->
-    <div id="loading-spinner" style="display: none">
-      <img src="path/to/pokeball-spinner.gif" alt="Loading..." />
+    <!-- Hidden loading spinner that shows while Pokemon data is being fetched -->
+    <div id="loading-spinner" class="hidden">
+      <img src="images/pokeball-spinner.gif" alt="Loading..." />
     </div>
 
-    <!-- Bootstrap JS and dependencies for interactive components like the modal -->
+    <!-- Including jQuery, Popper.js, and Bootstrap JS  -->
     <script
       src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
       integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
@@ -139,11 +157,11 @@
       crossorigin="anonymous"
     ></script>
 
-    <!-- Polyfills for older browsers to support fetch and promises -->
+    <!-- Polyfills for older browsers that may not support fetch and promises -->
     <script src="js/fetch-pollyfill.js"></script>
     <script src="js/promise-pollyfill.js"></script>
 
-    <!-- Custom JavaScript to handle Pokémon fetching, displaying, and modal interaction -->
-    <script src="js/scripts.js"></script>
+    <!-- Custom JavaScript for handling Pokemon data fetching and modal interactions -->
+    <script src="dist/dist.js"></script>
   </body>
 </html>
