@@ -1,384 +1,408 @@
 /* Main body styling */
 body {
-  font-family: "Press Start 2P", sans-serif;
-  margin: 0;
-  padding: 0;
-  text-align: center;
-  background-color: skyblue;
+  font-family: "Press Start 2P", sans-serif; /* Custom font for the entire page */
+  margin: 0; /* Remove default margin */
+  padding: 0; /* Remove default padding */
+  text-align: center; /* Center-align all text */
+  background-color: skyblue; /* Set the background color */
+}
+
+.hidden {
+  display: none; /* Hide elements with this class */
 }
 
 /* Dark mode styles */
 body.dark-mode {
-  background-color: #121212;
-  color: #ffffff;
+  background-color: #121212; /* Dark background color for dark mode */
+  color: #ffffff; /* White text color for dark mode */
 }
 
-/* modal dark mode */
+/* Modal content styling in dark mode */
 body.dark-mode .modal-content {
-  background-color: #000000;
-  color: #ffffff;
+  background-color: #000000; /* Black modal background */
+  color: #ffffff; /* White text for the modal */
 }
 
-/* Dark mode styles for container */
+/* Container styling in dark mode */
 .container.dark-mode {
-  background-color: #1e1e1e;
-  color: #ffffff;
+  background-color: #1e1e1e; /* Dark background for the container */
+  color: #ffffff; /* White text inside the container */
 }
 
-/* Dark mode styles for Pokemon list items */
+/* List item styling in dark mode */
 .dark-mode .pokemon-list li {
-  background-color: black;
-  color: white;
-  border: 1px solid #ffffff;
+  background-color: black; /* Black background for Pokemon list items */
+  color: white; /* White text for list items */
+  border: 1px solid #ffffff; /* White border for the list items */
 }
 
-/* Dark mode for small Pokémon images */
+/* Styling for small Pokemon images in dark mode */
 .dark-mode .small-pokemon-image {
-  border-color: orange;
+  border-color: orange; /* Orange border around small images */
 }
 
+/* Toggle button container styling */
 .toggle-container {
-  position: absolute;
-  top: 90px;
-  right: 30px;
-  z-index: 1000;
-  padding: 0;
+  position: absolute; /* Positioned relative to the page */
+  top: 90px; /* Offset from the top */
+  right: 30px; /* Offset from the right */
+  z-index: 1000; /* Ensure it's above other elements */
+  padding: 0; /* No padding */
 }
 
+/* Dark mode button styling */
 .dark-mode-button {
-  background: none;
-  border: none;
-  box-shadow: none;
-  padding: 0;
-  cursor: pointer;
-  font-size: 24px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  transform-origin: center;
+  background: none; /* No background for the button */
+  border: none; /* No border */
+  box-shadow: none; /* No shadow */
+  padding: 0; /* No padding */
+  cursor: pointer; /* Pointer cursor on hover */
+  font-size: 24px; /* Font size for the button */
+  display: flex; /* Flexbox for aligning content */
+  align-items: center; /* Center-align content vertically */
+  justify-content: center; /* Center-align content horizontally */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for effects */
+  transform-origin: center; /* Set transform origin to center */
 }
 
 /* Moon icon for light mode */
 .dark-mode-button::before {
-  content: "🌙";
-  font-size: 20px;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  opacity: 1;
-  transition: opacity 0.4s ease, transform 0.4s ease;
+  content: "🌙"; /* Moon emoji as icon */
+  font-size: 20px; /* Font size for the icon */
+  position: absolute; /* Positioned inside the button */
+  top: 50%; /* Centered vertically */
+  left: 50%; /* Centered horizontally */
+  transform: translate(-50%, -50%); /* Exact centering */
+  opacity: 1; /* Fully visible */
+  transition: opacity 0.4s ease, transform 0.4s ease; /* Smooth transition */
 }
 
 /* Hover effect for the button */
 .dark-mode-button:hover {
-  background: none;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-  transition: box-shadow 0.3s ease;
-  transform: scale(1.5);
-  transition: transform 2s ease, box-shadow 0.3s ease;
+  background: none; /* No background on hover */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Add shadow on hover */
+  transition: box-shadow 0.3s ease; /* Smooth shadow transition */
+  transform: scale(1.5); /* Enlarge on hover */
 }
 
-/* When dark mode is activated, the moon icon fades out and the sun icon fades in */
+/* Sun icon for dark mode */
 body.dark-mode .dark-mode-button::before {
-  content: "☀️";
-  opacity: 1;
-  font-size: 20px;
-  transform: translate(-50%, -50%) rotate(180deg);
-  transition: opacity 0.4s ease, transform 0.4s ease;
+  content: "☀️"; /* Sun emoji for dark mode */
+  opacity: 1; /* Fully visible */
+  font-size: 20px; /* Font size */
+  transform: translate(-50%, -50%) rotate(180deg); /* Rotate for effect */
 }
 
-/* This hides the previous icon smoothly when switching modes */
+/* Smoothly switch between icons when toggling modes */
 body:not(.dark-mode) .dark-mode-button::before {
-  opacity: 1;
-  transform: translate(-50%, -50%) rotate(0deg);
+  opacity: 1; /* Keep icon visible */
+  transform: translate(-50%, -50%) rotate(0deg); /* Reset rotation */
 }
 
 body.dark-mode .dark-mode-button::before {
-  opacity: 1;
-  transform: translate(-50%, -50%) rotate(180deg);
+  opacity: 1; /* Ensure icon is visible in dark mode */
+  transform: translate(-50%, -50%) rotate(180deg); /* Rotate icon */
 }
 
-/* Smooth transition for background color and text color on body when you click dark or light mode */
+/* Smooth transition for background and text color when toggling dark/light mode */
 body {
-  transition: background-color 0.5s ease, color 0.5s ease;
+  transition: background-color 0.5s ease, color 0.5s ease; /* Smooth transition for body */
 }
 
-/* Styling for the container */
+/* Styling for the container element */
 .container {
-  width: 100%;
-  max-width: 1200px;
-  min-height: 100vh;
-  margin: 0 auto;
-  padding: 20px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-start;
+  width: 100%; /* Full width */
+  max-width: 1200px; /* Max width constraint */
+  min-height: 100vh; /* Full viewport height */
+  margin: 0 auto; /* Center horizontally */
+  padding: 20px; /* Padding around content */
+  display: flex; /* Flexbox layout */
+  flex-direction: column; /* Vertical stacking */
+  align-items: center; /* Center-align content horizontally */
+  justify-content: flex-start; /* Align content at the top */
 }
 
-/* h1 page header*/
+/* Main page heading */
 h1 {
-  margin-top: 20px;
-  margin-bottom: 30px;
-  font-size: 2.5rem;
+  margin-top: 20px; /* Space above heading */
+  margin-bottom: 30px; /* Space below heading */
+  font-size: 2.5rem; /* Large font size */
 }
 
-/* Pokemon list container */
+/* Container for the Pokemon list */
 .pokemon-list-container {
-  display: flex;
-  justify-content: center;
-  width: 100%;
-  padding: 0;
-  margin: 0 auto;
+  display: flex; /* Flex layout for the list */
+  justify-content: center; /* Center-align the list */
+  width: 100%; /* Full width */
+  padding: 0; /* No padding */
+  margin: 0 auto; /* Center the container */
 }
 
-/* Pokemon list grid layout */
+/* Grid layout for the Pokemon list */
 .pokemon-list {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 10px;
-  width: 100%;
-  max-width: 1200px;
-  padding: 0;
-  margin: 0 auto;
+  display: grid; /* CSS grid for layout */
+  grid-template-columns: repeat(4, 1fr); /* 4 equal-width columns */
+  gap: 10px; /* Space between grid items */
+  width: 100%; /* Full width */
+  max-width: 1200px; /* Max width constraint */
+  padding: 0; /* No padding */
+  margin: 0 auto; /* Center the list */
 }
 
 /* Styling for individual Pokemon list items */
 .pokemon-list li {
-  background-color: white;
-  padding: 20px;
-  border: 2px solid #333;
-  border-radius: 12px;
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
-  cursor: pointer;
-  width: 100%;
-  max-width: 250px;
-  min-height: 400px;
-  height: auto;
-  transition: transform 0.3s ease-in-out;
-  overflow: hidden;
+  background-color: white; /* White background for items */
+  padding: 20px; /* Padding inside the items */
+  border: 2px solid #333; /* Dark border around items */
+  border-radius: 12px; /* Rounded corners */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Shadow effect */
+  display: flex; /* Flexbox for item content */
+  flex-direction: column; /* Vertical stacking of content */
+  align-items: center; /* Center-align content horizontally */
+  justify-content: space-between; /* Space content out */
+  cursor: pointer; /* Pointer cursor on hover */
+  width: 100%; /* Full width */
+  max-width: 250px; /* Max width constraint */
+  min-height: 400px; /* Minimum height */
+  height: auto; /* Automatic height */
+  transition: transform 0.3s ease-in-out; /* Smooth transform transition */
+  overflow: hidden; /* Hide overflow */
 }
 
-/* Adjusting Pokemon names inside the cards */
+/* Adjust Pokemon names inside the cards */
 .pokemon-list li h2 {
-  font-size: 1.2rem;
-  text-align: center;
-  word-wrap: break-word;
-  margin-bottom: 10px;
+  font-size: 1.2rem; /* Font size for names */
+  text-align: center; /* Center-align the text */
+  word-wrap: break-word; /* Wrap long names */
+  margin-bottom: 10px; /* Space below the name */
 }
 
 /* Image for Pokemon cards */
 .pokemon-list li img {
-  width: 100%;
-  height: auto;
-  object-fit: cover;
+  width: 100%; /* Full width */
+  height: auto; /* Maintain aspect ratio */
+  object-fit: cover; /* Cover the container */
 }
 
-/* Hover effect for Pokémon cards */
+/* Hover effect for Pokemon cards */
 .pokemon-list li:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.4);
+  transform: translateY(-5px); /* Slight upward movement on hover */
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.4); /* Larger shadow on hover */
 }
 
 /* Tooltip for additional Pokemon info */
 .tooltip {
-  visibility: hidden;
-  background-color: black;
-  color: #fff;
-  text-align: center;
-  padding: 5px;
-  border-radius: 6px;
-  position: absolute;
-  bottom: 125%;
-  left: 50%;
-  transform: translateX(-50%);
-  opacity: 0;
-  transition: opacity 0.3s;
+  visibility: hidden; /* Hidden by default */
+  background-color: black; /* Black background */
+  color: #fff; /* White text */
+  text-align: center; /* Center the text */
+  padding: 5px; /* Padding inside the tooltip */
+  border-radius: 6px; /* Rounded corners */
+  position: absolute; /* Positioned relative to the item */
+  bottom: 125%; /* Position above the item */
+  left: 50%; /* Center horizontally */
+  transform: translateX(-50%); /* Center-align */
+  opacity: 0; /* Initially hidden */
+  transition: opacity 0.3s; /* Smooth transition */
 }
 
 /* Show tooltip on hover */
 .pokemon-list li:hover .tooltip {
-  visibility: visible;
-  opacity: 1;
+  visibility: visible; /* Make the tooltip visible */
+  opacity: 1; /* Fully visible */
 }
 
-/* Modal for Pokemon details */
+/* Modal image styling */
 .pokemon-modal-image {
-  width: 100%;
-  max-width: 300px;
-  height: auto;
-  object-fit: cover;
-  display: block;
-  margin: 0 auto 20px;
+  width: 100%; /* Full width */
+  max-width: 300px; /* Max width constraint */
+  height: auto; /* Maintain aspect ratio */
+  object-fit: cover; /* Cover the container */
+  display: block; /* Block element */
+  margin: 0 auto 20px; /* Center-align and add margin below */
 }
 
 /* Center the modal footer close button */
 .modal-footer {
-  display: flex;
-  justify-content: center;
+  display: flex; /* Flex layout */
+  justify-content: center; /* Center the button */
 }
 
 .modal-footer button {
-  margin: 0 auto;
+  margin: 0 auto; /* Center-align the button */
 }
 
 /* Stat bars container */
 .stat-bar {
-  background-color: #ddd;
-  border-radius: 8px;
-  margin: 5px 0;
-  width: 100%;
-  height: 15px;
-  position: relative;
+  background-color: #ddd; /* Light background */
+  border-radius: 8px; /* Rounded corners */
+  margin: 5px 0; /* Margin above and below */
+  width: 100%; /* Full width */
+  height: 15px; /* Fixed height */
+  position: relative; /* Relative positioning for child elements */
 }
 
 /* Inner stat fill bar */
 .bar {
-  height: 100%;
-  border-radius: 8px;
-  background-color: orange;
-  max-width: 100%;
-  text-align: center;
-  font-size: 12px;
-  padding: 0 5px;
-  line-height: 15px;
-  color: white;
-  white-space: nowrap;
+  height: 100%; /* Full height */
+  border-radius: 8px; /* Rounded corners */
+  background-color: orange; /* Orange color */
+  max-width: 100%; /* Max width constraint */
+  text-align: center; /* Center-align text inside */
+  font-size: 12px; /* Small font size */
+  padding: 0 5px; /* Padding inside the bar */
+  line-height: 15px; /* Align text vertically */
+  color: white; /* White text */
+  white-space: nowrap; /* Prevent text wrapping */
 }
 
-/* Pokemon Type Bars */
+/* Pokemon type bars */
 .type-bars {
-  display: flex;
-  justify-content: center;
-  gap: 8px;
-  margin-top: 10px;
+  display: flex; /* Flex layout for types */
+  justify-content: center; /* Center-align types */
+  gap: 8px; /* Space between type bars */
+  margin-top: 10px; /* Space above the type bars */
 }
 
-/* Individual Type Bar */
+/* Individual type bar */
 .type-bar {
-  display: inline-block;
-  padding: 5px 10px;
-  border-radius: 8px;
-  margin: 5px;
-  min-width: 70px;
-  text-align: center;
-  flex-shrink: 0;
-  font-size: 14px;
+  display: inline-block; /* Inline block element */
+  padding: 5px 10px; /* Padding inside the bar */
+  border-radius: 8px; /* Rounded corners */
+  margin: 5px; /* Margin around each bar */
+  min-width: 70px; /* Minimum width constraint */
+  text-align: center; /* Center-align the text */
+  flex-shrink: 0; /* Prevent shrinking */
+  font-size: 14px; /* Font size for the text */
 }
 
 /* Type label */
 .type-label {
-  color: #fff;
-  font-weight: bold;
-  text-transform: capitalize;
-  display: block;
+  color: #fff; /* White text color */
+  font-weight: bold; /* Bold text */
+  text-transform: capitalize; /* Capitalize the first letter */
+  display: block; /* Block element */
 }
 
-/* Search bar container */
+/* Container for the search bar */
 .search-bar-container {
-  display: flex;
-  justify-content: center;
-  margin-bottom: 20px;
+  display: flex; /* Flex layout for alignment */
+  justify-content: center; /* Center-align the search bar */
+  margin-bottom: 20px; /* Space below the search bar */
 }
 
-/* Search bar styling */
+/* Styling for the search bar */
 .search-bar {
-  width: 100%;
-  max-width: 400px;
-  padding: 15px;
-  font-size: 18px;
-  border-radius: 8px;
-  border: 2px solid #333;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  outline: none;
-  transition: all 0.3s ease;
-  font-family: "Press Start 2P", sans-serif;
-  text-align: left;
+  width: 100%; /* Full width */
+  max-width: 300px; /* Max width constraint */
+  padding: 8px 12px; /* Padding for better appearance */
+  font-size: 14px; /* Font size */
+  border-radius: 25px; /* Rounded border */
+  border: 2px solid #333; /* Dark border */
+  background: linear-gradient(to right, #f0f0f0, #e0e0e0); /* Gradient background */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Shadow effect */
+  outline: none; /* No outline on focus */
+  transition: all 0.3s ease; /* Smooth transition for focus */
+  font-family: "Press Start 2P", sans-serif; /* Custom font */
+  text-align: left; /* Left-align the text */
 }
 
-/* Search bar effect */
+/* Search bar focus effect */
 .search-bar:focus {
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+  border-color: #ffcb05; /* Change border color on focus */
+  box-shadow: 0 6px 12px rgba(255, 203, 5, 0.4); /* Glow effect */
+  background: linear-gradient(to right, #ffffff, #f8f8f8); /* Lighter background */
 }
 
-/* Styling for Pokemon types */
+/* Hover effect for the search bar */
+.search-bar:hover {
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Shadow on hover */
+}
+
+/* Styling for Pokemon types dropdown */
 .type-dropdown {
-  width: 100%;
-  max-width: 400px;
-  padding: 10px;
-  font-size: 16px;
-  margin-left: 10px;
-  border-radius: 5px;
-  border: 2px solid #333;
-  background-color: white;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  font-family: "Press Start 2P", sans-serif;
+  width: 100%; /* Full width */
+  max-width: 300px; /* Max width constraint */
+  padding: 8px 12px; /* Padding inside */
+  font-size: 14px; /* Font size */
+  border-radius: 25px; /* Rounded border */
+  border: 2px solid #333; /* Dark border */
+  background: linear-gradient(to right, #f0f0f0, #e0e0e0); /* Gradient background */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Shadow effect */
+  outline: none; /* No outline */
+  transition: all 0.3s ease; /* Smooth transition on focus */
+  font-family: "Press Start 2P", sans-serif; /* Custom font */
+  text-align: left; /* Left-align text */
 }
 
 /* Dropdown focus effect */
 .type-dropdown:focus {
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+  border-color: #ffcb05; /* Border color change on focus */
+  background: linear-gradient(to right, #ffffff, #f8f8f8); /* Lighter background on focus */
 }
 
 /* Media queries for responsiveness */
 
-/* For screens smaller than 1024px */
-@media (max-width: 1024px) {
+/* For extra small devices (portrait phones, less than 576px) */
+@media (max-width: 576px) {
   .pokemon-list {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: 1fr; /* Single column layout */
   }
 
   h1 {
-    font-size: 2rem;
-  }
-
-  .dark-mode-button {
-    padding: 12px;
-  }
-}
-
-/* For screens smaller than 768px */
-@media (max-width: 768px) {
-  .pokemon-list {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  h1 {
-    font-size: 1.8rem;
+    font-size: 1.5rem; /* Smaller heading size */
   }
 
   .pokemon-list li {
-    max-width: 200px;
-    min-height: 350px;
+    max-width: 100%; /* Full width for list items */
+    min-height: 300px; /* Adjust the minimum height */
   }
 
-  .dark-mode-button {
-    padding: 10px;
+  .search-bar, .type-dropdown {
+    max-width: 100%; /* Full width for search and dropdown */
   }
 }
 
-/* For screens smaller than 480px */
-@media (max-width: 480px) {
+/* For small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) and (max-width: 768px) {
   .pokemon-list {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, 1fr); /* 2 columns for medium-sized phones */
   }
 
   h1 {
-    font-size: 1.5rem;
+    font-size: 1.8rem; /* Adjust heading size */
   }
 
   .pokemon-list li {
-    max-width: 100%;
-    min-height: auto;
-  }
-
-  .dark-mode-button {
-    padding: 8px;
+    max-width: 250px; /* Adjust item width */
+    min-height: 350px; /* Adjust minimum height */
   }
 }
+
+/* For medium devices (tablets, 768px and up) */
+@media (min-width: 768px) and (max-width: 992px) {
+  .pokemon-list {
+    grid-template-columns: repeat(3, 1fr); /* 3 columns for tablets */
+  }
+
+  h1 {
+    font-size: 2rem; /* Slightly larger heading size */
+  }
+
+  .pokemon-list li {
+    max-width: 250px; /* Maintain width */
+    min-height: 380px; /* Increase min-height */
+  }
+}
+
+/* For large devices (desktops, 992px and up) */
+@media (min-width: 992px) and (max-width: 1200px) {
+  .pokemon-list {
+    grid-template-columns: repeat(4, 1fr); /* 4 columns for larger screens */
+  }
+
+  h1 {
+    font-size: 2.5rem; /* Larger heading for larger screens */
+  }
+}
+
